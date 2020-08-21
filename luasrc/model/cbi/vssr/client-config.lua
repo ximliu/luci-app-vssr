@@ -81,7 +81,7 @@ o.description = translate(
 
 o = s:option(Value, "alias", translate("Alias(optional)"))
 
-o = s:option(Value, "flag", translate("Country"))
+o = s:option(Value, "flag", translate("Area"))
 o.description = translate("请自己指定。格式：cn us hk 等")
 o.rmempty = true
 
@@ -103,6 +103,11 @@ o.password = true
 o.rmempty = true
 o:depends("type", "ssr")
 o:depends("type", "ss")
+o:depends("type", "trojan")
+
+o = s:option(Value, "peer", translate("Peer"))
+o.datatype = "host"
+o.rmempty = true
 o:depends("type", "trojan")
 
 o = s:option(ListValue, "encrypt_method", translate("Encrypt Method"))
